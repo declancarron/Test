@@ -20,9 +20,45 @@ namespace Loops
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+                public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int answer = Convert.ToInt16(tbxScore.Text.Trim());
+
+                if (answer >= 90 && answer <100)
+                {
+                    MessageBox.Show("You Got an A");
+                }
+                else if (answer >= 80)
+                {
+                    MessageBox.Show("You Got an B");
+                }
+                else if (answer >= 70)
+                {
+                    MessageBox.Show("You Got an C");
+                }
+                else if (answer >= 60)
+                {
+                    MessageBox.Show("You Got an D");
+                }
+                else (answer < 60)
+                {
+                    MessageBox.Show("You Got an F");
+                }
+                
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("There is a problem with your number");
+            }
+            
         }
     }
 }
